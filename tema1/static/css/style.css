@@ -1,0 +1,52 @@
+body{
+	height: 100vh;
+	width: 100vw;
+	margin: 0px;
+	padding: 0px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.page-title{
+	margin-bottom: 30px;
+
+	color: white;
+	font-size: 42px;
+	font-weight: lighter;
+}
+
+.content-container{
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	background-color: rgba(27, 27, 27, 0.5);
+}
+
+#search_bar{
+	height: 40px;
+	width: 200px;
+
+	padding-left: 10px;
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: darkslategray;
+	font-size: 20px;
+}
+
+#description{
+	margin-top:20px;
+	color: white;
+	font-size: 28px;
+	font-weight: lighter;
+}
