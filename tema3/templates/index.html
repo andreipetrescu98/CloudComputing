@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/index.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/header.css">
+    <script src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/base.js')}}"></script>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+
+</head>
+<body>
+    <div class="header">
+        
+        <div class="left-section">
+            <p class="title">Title</p>
+        </div>
+        
+        <div class="right-section">
+            <div class="user-account">
+                {% if user %}
+                    <span>{{welcome_message}}</span>
+                {% endif %}
+                <img src="../static/assets/user.svg" id="user-icon">
+            </div>
+            <div class="right-part">
+                <div class="add-button" id="addButton">
+                    <img src="../static/assets/plus.svg" id="plus-icon">
+                    <span class="add-button-title">Add advert</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="adverts-list">
+        {% for advert in adverts %}
+        {% if advert.availability == True %}
+        <div class="advert">
+            <div class="animal-img">
+                <img src="https://storage.googleapis.com/cloudcomputing-272912.appspot.com/adverts/dog.jpg" alt="poza" id="profile-pic">
+            </div>
+            <div class="details">
+                <div class="description">
+                    <p class="text-description">{{advert.title}} , {{advert.description}}</p>
+                </div>
+                <div class="credits">
+                    <div class="time">
+                        <span>{{advert.date}}</span>
+                    </div>
+                    <div class="price" onclick="setCalendarEvent('{{advert.id}}')">
+                        <span>{{advert.price}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endif%}
+        {% endfor %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+/.vscode/*
+/.idea/*
+/env/*
+/__pycache__/*
+/include
+/Lib
+/tcl
+/Scripts
+LICENSE.TXT
+/db/__pycache__/*
+/models/__pycache__/*
+/singleton/__pycache__/*
+*.pyc
+token.pickle
+/static/js/node_modules
