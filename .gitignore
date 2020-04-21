@@ -13,3 +13,4 @@ tema3/singleton/__pycache__/*
 *.pyc
 tema3/token.pickle
 tema3/static/js/node_modules
+*.json

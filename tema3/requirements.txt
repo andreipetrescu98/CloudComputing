@@ -1,0 +1,14 @@
+requests
+Flask
+oauthlib
+pyOpenSSL
+Flask-Login
+Flask-CORS
+google-cloud-firestore
+google-api-python-client
+requests-oauthlib
+google-auth-oauthlib
+gunicorn
+google-cloud-storage
+gcloud
+google-python-cloud-debugger

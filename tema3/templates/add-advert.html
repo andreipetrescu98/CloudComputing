@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/add-advert.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/header.css">
+    <script src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/add-advert.js')}}"></script>
+    <title>Add-advert</title>
+</head>
+<body>
+    <div class="header">
+    
+            <div class="left-section">
+                <p class="title">Title</p>
+            </div>
+            
+            <div class="right-section">
+                <div class="user-account">
+                    <img src="../static/assets/user.svg" id="user-icon">
+                </div>
+                
+                <div class="add-button">
+                    <img src="../static/assets/plus.svg" id="plus-icon">
+                    <span class="add-button-title">Add job</span>
+                </div>
+    
+            </div>
+    </div>
+    <h1>Submit your advert</h1>
+    <form class="add-form">
+        <div class="inputs-section">
+
+            <div class="section">
+                <label for="title"><b>Title</b></label>
+                <input type="text" placeholder="Title" name="title" id="title" required>
+            </div>
+    
+            <div class="section">
+                <label for="description"><b>Description</b></label>
+                <input type="text" placeholder="Description" name="description" id="description" required>
+            </div>
+    
+            <div class="section">
+                <label for="price"><b>Price</b></label>
+                <input type="text" placeholder="Price" name="price" id="price" required>
+            </div>
+    
+            <div class="section">
+                <label for="duration"><b>Duration</b></label>
+                <input type="text" placeholder="Enter duration in minutes" name="duration" id="duration" required>
+            </div>
+
+            <div class="section">
+                <label for="date"><b>Date</b></label>    
+                <input type="datetime-local" id="date" name="date">
+            </div>
+        </div>
+
+        <div class="add-job-button" id="submit">
+            <span class="add-button-title">Submit job</span>
+        </div>
+    </form>
+
+
+    <!-- <form>
+        <label for="title"><b>Title</b></label>
+        <input type="text" placeholder="Title" name="title" id="title" required>
+
+        <label for="description"><b>Description</b></label>
+        <input type="text" placeholder="Description" name="description" id="description" required>
+
+        <label for="price"><b>Price</b></label>
+        <input type="text" placeholder="Price" name="price" id="price" required>
+
+        <label for="duration"><b>Duration</b></label>
+        <input type="text" placeholder="Enter duration in minutes" name="duration" id="duration" required>
+
+        <input type="submit" value="Add" id="submit">
+
+    </form> -->
+</body>
+
+
+</html>
