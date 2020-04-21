@@ -1,0 +1,15 @@
+tema3/.vscode/*
+tema3/.idea/*
+tema3/env/*
+tema3/__pycache__/*
+tema3/include
+tema3/Lib
+tema3/tcl
+tema3/Scripts
+tema3/LICENSE.TXT
+tema3/db/__pycache__/*
+tema3/models/__pycache__/*
+tema3/singleton/__pycache__/*
+*.pyc
+tema3/token.pickle
+tema3/static/js/node_modules
