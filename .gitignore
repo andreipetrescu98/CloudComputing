@@ -1,6 +1,9 @@
 tema3/.vscode/*
+tema4/.vscode/*
 tema3/.idea/*
+tema4/.idea/*
 tema3/env/*
+tema4/env/*
 tema3/__pycache__/*
 tema3/include
 tema3/Lib
