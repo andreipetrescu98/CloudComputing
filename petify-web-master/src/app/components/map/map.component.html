@@ -1,0 +1,31 @@
+<div class="container">
+    <div id="myMap"></div>
+    <div id="search" *ngIf="!viewOnly && datasource">
+        <div class="search-input-box">
+            <div class="search-input-group">
+                <div class="search-icon" type="button"></div>
+                <input type="text" placeholder="Search" [(ngModel)]="searchModel"
+                    (ngModelChange)="onSearchChange($event)">
+            </div>
+        </div>
+        <ul id="results-panel">
+            <li *ngFor="let result of results" (click)="itemClicked(result)">
+                <div class="title" *ngIf="result.properties.poi && result.properties.poi.name; else freeForm">
+                    {{result.properties.poi.name}}
+                </div>
+                <ng-template #freeForm>
+                    {{result.properties.address.freeformAddress}}
+                </ng-template>
+                <div class="info">
+                    {{result.properties.type}}: {{result.properties.address.freeformAddress}}
+                </div>
+                <div class="info" *ngIf="result.properties.poi && result.properties.poi.phone">
+                    phone: {{result.properties.poi.phone}}
+                </div>
+                <div class="info" *ngIf="result.properties.poi && result.properties.poi.url">
+                    <a href="http://{{result.properties.poi.url}}">http://{{result.properties.poi.url}}</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

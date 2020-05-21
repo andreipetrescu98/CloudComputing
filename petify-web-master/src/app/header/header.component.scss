@@ -1,0 +1,56 @@
+@import "theme_partial";
+
+.header {
+  height: 5.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: mat-color($Petify-primary);
+  color: white;
+  align-items: center;
+  .title {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    & > p {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  padding: 0.2rem;
+  &:hover {
+    background-color: rgba(211, 211, 211, 0.5);
+  }
+
+  & > div {
+    margin-left: 1rem;
+  }
+
+  & > .name {
+    display: flex;
+    flex-direction: column;
+    span:first-child {
+      font-size: 1.2rem;
+    }
+    span:last-child {
+      font-size: 0.8rem;
+      color: white;
+    }
+  }
+
+  & > .profile_pic {
+    overflow: hidden;
+    border-radius: 100%;
+
+    & > img {
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+}

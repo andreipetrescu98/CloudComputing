@@ -1,0 +1,26 @@
+<div class="header">
+    <div class="title">
+        <button mat-icon-button color="accent" (click)="openNav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <p>Petify</p>
+    </div>
+
+    <div class="account">
+        <ng-container *ngIf="user">
+            <div class="name">
+                <span>Hi {{user.name}}</span>
+                <span>{{user.email}}</span>
+            </div>
+            <div class="profile_pic">
+                <img [src]="user.picture" alt="">
+            </div>
+        </ng-container>
+        <div class="actions">
+            <button mat-raised-button color="accent" (click)="openDialog()">add advert</button>
+            <button mat-icon-button onclick="window.location='https://petify-web.azurewebsites.net/.auth/logout';">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

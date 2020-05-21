@@ -1,0 +1,67 @@
+.content {
+  display: flex;
+  height: 90%;
+}
+
+.data-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.data-image {
+  .image {
+    width: auto;
+    height: 20rem;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
+    background-size: cover;
+    background-position: center;
+
+    & > p {
+      text-align: center;
+      color: lightgray;
+    }
+
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.advert-actions{
+  font-size: 2rem;
+}
+
+.mapcontainer{
+  padding: 2rem;
+}
+
+.modal-loader{
+  width: 100%;
+  height: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: rgba(255, 255, 255);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+
+  &>.inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    mat-progress-spinner{
+      margin: 1rem;
+    }
+  }
+}

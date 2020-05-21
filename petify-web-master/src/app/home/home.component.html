@@ -1,0 +1,5 @@
+<app-grid-view [adverts]="adverts" canSubscribe="true" *ngIf="adverts.length>1"></app-grid-view>
+<div class="load-container" *ngIf="loading">
+    <mat-progress-spinner color="accent" mode="indeterminate">
+    </mat-progress-spinner>
+</div>

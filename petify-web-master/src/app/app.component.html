@@ -1,0 +1,28 @@
+<mat-sidenav-container
+    class="nav-container" (backdropClick)="close()">
+  <mat-sidenav #sidenav (keydown.escape)="close()" disableClose>
+    <div class="profile">
+      <div class="logo">
+      </div>
+      <p>Petify</p>
+    </div>
+    <div class="navigation">
+      <input cdkFocusInitial type='text' style="display: none" />
+      <button mat-button routerLink="/home" routerLinkActive="active" (click)="close()">Home</button>
+      <button mat-button routerLink="/subscriptions" routerLinkActive="active" (click)="close()">Subscriptions</button>
+      <button mat-button routerLink="/adverts" routerLinkActive="active" (click)="close()">My Adverts</button>
+    </div>
+    <div class="close-nav">
+      <button mat-icon-button (click)="close()">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header (onNavOpen)="sidenav.open()"></app-header>
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

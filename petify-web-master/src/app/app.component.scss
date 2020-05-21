@@ -1,0 +1,63 @@
+.nav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+mat-sidenav {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem;
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      background-color: #c44b4b;
+      background-image: url(../assets/dog.jpg);
+      background-position: center;
+      background-size: contain;
+      border-radius: 100%;
+      width: 11rem;
+      height: 11rem;
+      overflow: hidden;
+    }
+
+    p {
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+
+    .active{
+      font-weight: bolder;
+      background-color: darken($color: white, $amount: 7);
+    }
+  }
+
+  .close-nav {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+  }
+}
+
+.main-container {
+  padding: 2rem;
+}
+
+.onlogin{
+  display: none;
+}

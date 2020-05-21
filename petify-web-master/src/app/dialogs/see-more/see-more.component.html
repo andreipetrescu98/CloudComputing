@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>{{advert.title}}</h1>
+<div mat-dialog-content class="content">
+    <div class="details">
+        <div class="image"
+            [ngStyle]="{'background-image': 'url(https://petifystorage.blob.core.windows.net/petifyblob/' + advert.id + '.png)'}">
+        </div>
+        <div class="a-details">
+            <span>From {{advert.start_date | date:'MMMM d, h:mm'}}</span>
+            <span>To {{advert.end_date | date:'MMMM d, h:mm'}}</span>
+        </div>
+    </div>
+    <div class="details">
+        <div class="description">
+            <p>{{advert.description}}</p>
+        </div>
+        <div class="u-details">
+            <div class="u-photo" [ngStyle]="{'background-image': 'url('+advert.user_picture+')'}">
+            </div>
+            <div class="info">
+                <span>{{advert.user_name}}</span>
+                <span>{{advert.user_id}}</span>
+            </div>
+        </div>
+        <div class="mapcontainer" *ngIf="advertLocation">
+            <app-map [viewOnly]="advertLocation"></app-map>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="actions">
+    <button mat-button (click)="close()">Close</button>
+    <div class="price">
+        <button mat-stroked-button color="accent" *ngIf="canSubscribe" (click)="subscribe()">
+            Subscribe
+        </button>
+        <span class="tag">{{advert.price}} RON</span>
+    </div>
+</div>

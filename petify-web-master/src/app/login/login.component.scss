@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    .header{
+        font-size: 3rem;
+        p{
+            width: 25rem;
+        }
+        p:first-child{
+            text-align: left;
+        }
+        p:last-child{
+            text-align: right;
+            font-weight: bolder;
+            font-size: 5rem;
+            border-top: 1px solid black;
+        }
+    }
+}

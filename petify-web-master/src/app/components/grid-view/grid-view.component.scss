@@ -1,0 +1,118 @@
+
+.tile {
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      transform: scale(1.02) !important;
+      z-index: 10;
+    }
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      .photo {
+        height: 30vh;
+        width: 12rem;
+        overflow: hidden;
+        border-radius: 5px;
+        background-position: center;
+        background-size: cover;
+      }
+  
+      .description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 30vh;
+        color: grey;
+        box-shadow: 71px -31px 134px -9px rgba(0, 0, 0, 0.37);
+        background-color: white;
+        padding: 1rem;
+      }
+  
+      .price {
+        font-size: 1rem;
+        font-weight: bolder;
+        color: #ff4081;
+        background-color: white;
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span{
+            border: 1px solid grey;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+  
+        &>div {
+            display: flex;
+            align-items: center;
+            button{
+                margin-left: 1rem;
+            }
+        }
+      }
+    }
+  
+    .footer {
+      height: 4rem;
+      & .container {
+        display: flex;
+        height: 4rem;
+        justify-content: space-between;
+        align-items: center;
+        & > div {
+          display: flex;
+          flex-direction: column;
+        }
+        .u-details {
+          display: flex;
+          flex-direction: row;
+          .u-photo {
+            background-position: center;
+            background-size: cover;
+            height: 3rem;
+            width: 3rem;
+          }
+  
+          & .info {
+            margin-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            span {
+              margin: 0;
+            }
+            span:first-child {
+              font-size: 1.2rem;
+            }
+            span:last-child {
+              font-size: 0.8rem;
+            }
+          }
+        }
+  
+        .a-details {
+        }
+  
+        .actions {
+          height: 100%;
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 0.3rem;
+          margin-left: 0.2rem;
+        }
+      }
+    }
+  }
+  
+  .tile-grid:hover .tile {
+    transform: scale(0.9);
+  }
+  

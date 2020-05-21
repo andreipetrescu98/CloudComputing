@@ -1,0 +1,57 @@
+<h1 mat-dialog-title *ngIf="!load">Add your advert</h1>
+<div mat-dialog-content class="content row">
+    <div class="modal-loader" [ngStyle]="{'height': load ? '100%' : '0'}">
+        <div class="inner">
+            <mat-progress-spinner [color]="load == 'advert' ? 'primary' : 'accent'" mode="indeterminate">
+            </mat-progress-spinner>
+            <p [hidden]="load == 'map'">Uploading {{load}}</p>
+        </div>
+    </div>
+    <form class="data-form col-md-8 row" #dialogForm="ngForm" *ngIf="!load">
+        <mat-form-field class="col-md-3">
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="data.title" required name="title">
+        </mat-form-field>
+        <mat-form-field class="col-md-5">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="data.description" required name="description"></textarea>
+        </mat-form-field>
+        <mat-form-field class="col-md-2">
+            <mat-label>Price</mat-label>
+            <input matInput [(ngModel)]="data.price" type="number" required name="price">
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+            <input matInput [ngxMatDatetimePicker]="startDate" placeholder="Start Date" [(ngModel)]="data.start_date"
+                name="startDate">
+            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #startDate [showSpinners]="true" [stepHour]="true" [stepMinute]="true"
+                [touchUi]="true">
+            </ngx-mat-datetime-picker>
+        </mat-form-field>
+        <mat-form-field class="col-md-3">
+            <input matInput [ngxMatDatetimePicker]="endDate" placeholder="End date" [(ngModel)]="data.end_date"
+                [min]="data.start_date" [disabled]="!data.start_date" name="endDate">
+            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #endDate [showSpinners]="true" [stepHour]="true" [stepMinute]="true"
+                [touchUi]="true">
+            </ngx-mat-datetime-picker>
+        </mat-form-field>
+        <mat-form-field class="col-md-4">
+            <mat-label>Location</mat-label>
+            <input matInput [(ngModel)]="data.location" type="text" disabled required name="location">
+        </mat-form-field>
+    </form>
+    <div class="data-image col-md-4" *ngIf="!load">
+        <div class="image" (click)="imageInput.click()" [ngStyle]="{'background-image': 'url('+selectedFile?.src+')'}">
+            <p>Click here to add an image</p>
+        </div>
+        <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" hidden>
+    </div>
+    <div class="col-md-12 mapcontainer" *ngIf="!load || load == 'map'">
+        <app-map (currPointChanged)="updateLocation($event)"></app-map>
+    </div>
+</div>
+<div mat-dialog-actions class="advert-actions" *ngIf="!load">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button (click)="addAdvert()" [disabled]="dialogForm && dialogForm.invalid">Add</button>
+</div>

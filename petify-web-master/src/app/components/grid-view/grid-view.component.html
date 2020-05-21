@@ -1,0 +1,39 @@
+<mat-grid-list [cols]="cols" class="tile-grid" rowHeight="50vh">
+    <mat-grid-tile *ngFor="let advert of adverts; let i = index" [colspan]="(advert.tile.cols % cols) == 0 ? 1 : (advert.tile.cols % cols)" [rowspan]="advert.tile.rows"
+        [style.background]="advert.tile.color" class="tile">
+        <mat-grid-tile-header class="header">
+            <p>{{advert.title}}</p>
+        </mat-grid-tile-header>
+        <div class="container row">
+            <div class="photo col-md-6"
+                [ngStyle]="{'background-image': 'url(https://petifystorage.blob.core.windows.net/petifyblob/' + advert.id + '.png)'}">
+            </div>
+            <div class="description col-md-6">
+                <p>{{advert.description}}</p>
+            </div>
+            <div class="price">
+                <span>{{advert.price}} RON</span>
+                <div>
+                    <button mat-raised-button (click)="getDetails(advert, index)">see more</button>
+                    <button mat-raised-button color="accent" *ngIf="canSubscribe" (click)="subscribeToAdvert(advert, i)">subscribe</button>
+                </div>
+            </div>
+        </div>
+        <mat-grid-tile-footer class="footer">
+            <div class="container">
+                <div class="u-details">
+                    <div class="u-photo" [ngStyle]="{'background-image': 'url('+advert.user_picture+')'}">
+                    </div>
+                    <div class="info">
+                        <span>{{advert.user_name}}</span>
+                        <span>{{advert.user_id}}</span>
+                    </div>
+                </div>
+                <div class="a-details">
+                    <span>From {{advert.start_date | date:'MMMM d, h:mm'}}</span>
+                    <span>To {{advert.end_date | date:'MMMM d, h:mm'}}</span>
+                </div>
+            </div>
+        </mat-grid-tile-footer>
+    </mat-grid-tile>
+</mat-grid-list>
